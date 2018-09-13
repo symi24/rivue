@@ -1,0 +1,7 @@
+<h1><%= @user.username %></h1>
+
+<% @user_posts.each do |post| %>
+       <%= link_to post.title, post %>
+<% end %> <br>
+<%= link_to 'stream', posts_path %> |
+<%= link_to 'new rivue', new_post_path %>
