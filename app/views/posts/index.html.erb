@@ -2,12 +2,15 @@
 
 <h1>Rivues</h1>
 
+
+</div>
     <% @posts.each do |post| %>
-      <%= link_to current_user.username, current_user %> <br>
-              <h3><%= post.title %></h3> 
-     <div class="wrapper"> <%= post.body %> <br>
-      <%= link_to 'Show', post %>
-      <% if post.user == current_user %>
+    <div class="wrapper"> 
+           <%= link_to current_user.username, current_user %> <br>
+           <h3><%= link_to post.title, post %></h3> 
+           <%= post.image.url %>
+                <%= post.body %> <br>
+       <% if post.user == current_user %>
         <%= link_to 'Edit', edit_post_path(post) %>
         <%= link_to 'Delete post', post, method: :delete, data: { confirm: 'Are you sure?' } %> <br>
         </div>
