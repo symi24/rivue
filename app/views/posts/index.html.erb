@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Rivues</h1>
+<h1 id="title">Rivues</h1>
 
 
 </div>
@@ -8,8 +8,15 @@
     <div class="wrapper"> 
            <%= link_to current_user.username, current_user %> <br>
            <h3><%= link_to post.title, post %></h3> 
-           <%= post.image.url %>
-                <%= post.body %> <br>
+           <%= image_tag post.image.url, style: "width: 400px; height: auto; padding: 5px;" %>
+                <div class="post-body"><%= post.body %></div> <br>
+       <%= link_to like_post_path(post), class: 'like', method: :put do %>
+      <button type="button" class="btn btn-primary btn-sm">like<%= post.get_upvotes.size %></button>
+     
+      <% end %>
+      <%= link_to unlike_post_path(post), class: 'unlike', method: :put do %>
+        <button type="button" class="btn btn-danger btn-sm">unlike<%= post.get_downvotes.size %></button>
+      <%end%>
        <% if post.user == current_user %>
         <%= link_to 'Edit', edit_post_path(post) %>
         <%= link_to 'Delete post', post, method: :delete, data: { confirm: 'Are you sure?' } %> <br>

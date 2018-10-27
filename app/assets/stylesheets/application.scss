@@ -1,11 +1,37 @@
 @import "bootstrap";
 /*universal styles */
 body{
-    background-color: #e6ecf0;
+    background-color: #1ec0ff;
 }
+.navbar{
+    box-shadow: 0px 0px 15px black;
+}
+/*end*/
+
+
+/*welcome*/
+
+.container-home{
+    margin-left: 150px;
+    margin-top: 400px;
+}
+#landing-title{
+color: white;
+}
+#landing-p{
+    color: white;
+    
+}
+/*end*/
+
 
 /*posts*/
-
+#title{
+    color: #a3daff
+}
+.post-body{
+    padding: 5px;
+}
 img.photo-show{
     width: 400px;
     height: auto;
@@ -14,17 +40,6 @@ img.photo-show{
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
 }
-/*index page styles*/
-// #profile-card{
-//     display: block;
-//     min-height: 300px;
-//     width: 200px;
-//     background-color: white;
-//     border: 10px;
-//     border-color: rgb(247, 130, 130);
-//     position: absolute;
-//     left: 200px;
-// }
 .wrapper{
     min-height: 300px;
     width: 400px;

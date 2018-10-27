@@ -4,11 +4,11 @@
   <%= @post.title %>
 </h2>
 <div class="wrapper">
-  <%= image_tag @post.image.url, class: "photo-show" %>
+  <%= image_tag @post.image.url, class: 'photo-show' %>
 
 <p>
   
-  <%= @post.body %>
+ <div class="post-body"><%= @post.body %></div>
 </p>
 </div>
   <%= link_to 'Edit', edit_post_path(@post) %> |

@@ -2,7 +2,14 @@ Rails.application.routes.draw do
   get 'users/show'
 
   devise_for :users
-  resources :posts
+
+  resources :posts do
+    member do
+      put 'like' => 'posts#upvote'
+      put 'unlike' => 'posts#downvote'
+    end
+  end
+  
   resources :users
   get 'welcome/home'
   root 'welcome#home'
